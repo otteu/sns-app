@@ -1,0 +1,5 @@
+rootProject.name = 'exception'
+include 'api'
+include 'db'
+include 'producers'
+

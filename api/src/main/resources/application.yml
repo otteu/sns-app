@@ -1,0 +1,96 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/./sns1
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+
+# redis
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+
+server:
+  port: 8081
+
+
+logging.level:
+  org.hibernate.SQL: debug
+
+
+
+
+jwt:
+  secret-key: Asdw-aswdfg.vbngty_ssd_2343_secret_key
+  # 30 days
+  token.expired-time-ms: 2592000000
+
+# 유료 버전
+#spring:
+#  profiles:
+#    default: local
+#
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/./test123
+#    username: sa
+#    password: 1234
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: local
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    show_sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        use_sql_comments: true
+#        # data.sql 실행
+#    defer-datasource-initialization: true
+#
+#  h2:
+#    console:
+#      enabled: true
+#
+#logging.level:
+#  org.hibernate.SQL: debug
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: test
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    show_sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#  #        use_sql_comments: true
+#
+#  # data.sql 실행 X
+#  sql:
+#    init:
+#      mode: never
